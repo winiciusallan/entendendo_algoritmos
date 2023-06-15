@@ -1,6 +1,8 @@
 # Entendendo Algoritmos
 Repositório para minhas anotações e estudos dos algoritmos citados no livro de Aditya Y. Bhargava.
 
+Todos os códigos desse repositório são escritos em Python.
+
 ---
 * [1. Introdução a algoritmos](./cap01)
 * [2. Ordenação por seleção](./cap02)
