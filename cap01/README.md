@@ -6,7 +6,7 @@ Vamos supor que queremos encontrar um nome em um dicionário com as 26 letras do
 as 26 letras até encontrar o nome de interesse. Na busca binária, o algoritmo no seu pior caso faria 5 varreduras.
 
 ## Descrição do Algoritmo
-O algoritmo se baseia na divisão e conquista e vai dividindo a busca sempre pela metade.
+O algoritmo se baseia na divisão e conquista, por isso vai sempre dividindo a busca pela metade.
 
 [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -38,7 +38,8 @@ baixo  meio  alto
 A faixa de busca vai sendo redefinida até que o nosso elemento do meio seja igual ao que queremos encontrar.
 
 ## Exemplo de código
-```
+```Python
+# Iterativo
 def busca_binaria(lista, item):
     # Ponto baixo da lista.
     baixo = 0 
@@ -60,3 +61,19 @@ def busca_binaria(lista, item):
     # Retorna none caso o elemento não esteja na lista.
     return None
 ```
+
+Apesar da recursão ainda não ter sido apresentado no material, trouxe um exemplo para ficar mais claro que é possível fazer o mesmo algoritmo utilizando uma estratégia diferente. Se você quiser pular para o tópico que trata de recursão clique [aqui](./cap03)
+```Python
+# Recursivo
+def busca_binaria_recursiva(lista, item, baixo, alto):
+    meio = int((baixo + alto) / 2)
+
+    if lista[meio] == item: 
+        return meio
+    if lista[meio] > item: 
+        return binary_search_recursive(lista, item, baixo, meio - 1)
+    if lista[meio] < item: 
+        return binary_search_recursive(lista, item, meio + 1, alto)
+```
+
+## Análise assintótica
